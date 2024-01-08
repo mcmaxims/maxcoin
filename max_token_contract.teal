@@ -1,0 +1,91 @@
+#pragma version 5
+gtxn 0 GroupIndex
+int 0
+==
+gtxn 1 GroupIndex
+int 1
+==
+&&
+gtxn 2 GroupIndex
+int 2
+==
+&&
+gtxn 3 GroupIndex
+int 3
+==
+&&
+global GroupSize
+int 4
+==
+&&
+global MinTxnFee
+global GroupSize
+*
+gtxn 0 Fee
+<=
+&&
+gtxn 0 TypeEnum
+int pay
+==
+gtxn 0 Receiver
+global CurrentApplicationAddress
+==
+&&
+gtxn 0 Amount
+int 1000000
+==
+&&
+&&
+gtxn 1 TypeEnum
+int axfer
+==
+gtxn 1 XferAsset
+int 123456
+==
+&&
+gtxn 1 AssetAmount
+int 1
+==
+&&
+gtxn 1 AssetReceiver
+gtxn 0 Sender
+==
+&&
+&&
+gtxn 2 TypeEnum
+int axfer
+==
+gtxn 2 XferAsset
+int 123456
+==
+&&
+gtxn 2 AssetAmount
+int 1
+==
+&&
+gtxn 2 AssetReceiver
+addr 2PIFZW53RHCSFSYMCFUBW4XOCXOMB7XOYQSQ6KGT3KVGJTL4HM6COZRNMM
+==
+&&
+gtxn 3 TypeEnum
+int appl
+==
+&&
+gtxn 3 ApplicationID
+int 148607000
+==
+&&
+gtxn 3 OnCompletion
+int NoOp
+==
+&&
+gtxna 3 ApplicationArgs 0
+byte "add_initial_liquidity"
+==
+&&
+gtxna 3 Accounts 0
+addr 2PIFZW53RHCSFSYMCFUBW4XOCXOMB7XOYQSQ6KGT3KVGJTL4HM6COZRNMM
+==
+&&
+&&
+return
